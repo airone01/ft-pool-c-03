@@ -24,14 +24,24 @@ int	my_cmp(char *s1, char *s2, int n, int end2)
 {
 	int	cmp;
 
-	cmp = 0;
 	if (n == 0)
 		return (0);
 	if (end2)
-		cmp = *s1;
+		cmp = 1;
 	else
 	{
-		cmp = *s1 - *s2;
+		if (*s1 == *s2)
+			cmp = 0;
+		else if (((unsigned char) *s1 > 127) && ((unsigned char) *s2 > 127))
+			cmp = 0;
+		else if (((unsigned char) *s1 <= 127) && ((unsigned char) *s2 > 127))
+			cmp = -1;
+		else if (((unsigned char) *s1 > 127) && ((unsigned char) *s2 <= 127))
+			cmp = 1;
+		else if (*s1 > *s2)
+			cmp = 1;
+		else if (*s1 < *s2)
+			cmp = -1;
 		if (*s2 == '\0')
 			end2 = 1;
 	}
@@ -67,4 +77,13 @@ int	ft_strcmp(char *s1, char *s2)
 // 	//
 // 	printf("###\ncmp og: %d\n", strcmp("ABA", "ABZ"));
 // 	printf("cmp cu: %d\n", ft_strcmp("ABA", "ABZ"));
+// 	//
+// 	printf("###\ncmp og: %d\n", strcmp("\201", ""));
+// 	printf("cmp cu: %d\n", ft_strcmp("\201", ""));
+// 	//
+// 	printf("###\ncmp og: %d\n", strcmp("\201\201", ""));
+// 	printf("cmp cu: %d\n", ft_strcmp("\201\201", ""));
+// 	//
+// 	printf("###\ncmp og: %d\n", strcmp("\201", "A\201"));
+// 	printf("cmp cu: %d\n", ft_strcmp("\201", "A\201"));
 // }
