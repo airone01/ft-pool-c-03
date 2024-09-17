@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -36,14 +36,13 @@ char	*ft_strstr(char *str, char *to_find)
 	return 0;
 }
 
-// int	main(void)
-// {
-// 	printf("OG: %s\n", strstr("Hello, world!", "world"));
-// 	printf("CU: %s\n", ft_strstr("Hello, world!", "world"));
-// 	printf("OG: %s\n", strstr("Hello, world!", ""));
-// 	printf("CU: %s\n", ft_strstr("Hello, world!", ""));
-// 	// https://stackoverflow.com/a/11589479/11609642
-// 	char	*res1 = strstr("Hello, world!", "42");
-// 	printf("OG: %s\n", res1 == 0 ? "(null)" : res1);
-// 	printf("CU: %s\n", ft_strstr("Hello, world!", "42"));
-// }
+int	main(void)
+{
+	printf("OG: %s\n", strstr("Hello, world!", "world"));
+	printf("CU: %s\n", ft_strstr("Hello, world!", "world"));
+	printf("OG: %s\n", strstr("Hello, world!", ""));
+	printf("CU: %s\n", ft_strstr("Hello, world!", ""));
+	char	rest1 = strstr("Hello, world!", "42");
+	printf("OG: %s\n", res1 == 0 ? "NULL!" : res1);
+	printf("CU: %s\n", ft_strstr("Hello, world!", "42"));
+}
