@@ -24,6 +24,7 @@ int	my_cmp(char *s1, char *s2, int n, int end2)
 {
 	int	cmp;
 
+	cmp = 0;
 	if (n == 0)
 		return (0);
 	if (end2)
@@ -40,7 +41,7 @@ int	my_cmp(char *s1, char *s2, int n, int end2)
 			cmp = 1;
 		else if (*s1 > *s2)
 			cmp = 1;
-		else if (*s1 < *s2)
+		else
 			cmp = -1;
 		if (*s2 == '\0')
 			end2 = 1;
