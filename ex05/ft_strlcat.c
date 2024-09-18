@@ -32,7 +32,6 @@ char	*ft_strlcat(char *dest, char *src, unsigned int size)
 	{
 		if (i > dest_len)
 		{
-			// printf("dest[%d] = src[%d - %d] = %c\n", i - 2, i, dest_len, src[i - dest_len - 1]);
 			dest[i - 2] = src[i - dest_len - 1];
 		}
 		i++;
