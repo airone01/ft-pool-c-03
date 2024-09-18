@@ -13,59 +13,23 @@
 // #include <stdio.h>
 // #include <string.h>
 
-int	ft_strlen(char *str)
-{
-	if (*str == '\0')
-		return (1);
-	return (ft_strlen (str + sizeof(char)) + 1);
-}
-
-int	my_cmp(char *s1, char *s2, int n, int end2)
-{
-	int	cmp;
-
-	cmp = 0;
-	if (n == 0)
-		return (0);
-	if (end2)
-		cmp = 1;
-	else
-	{
-		if (*s1 == *s2)
-			cmp = 0;
-		else if (((unsigned char) *s1 > 127) && ((unsigned char) *s2 > 127))
-			cmp = 0;
-		else if (((unsigned char) *s1 <= 127) && ((unsigned char) *s2 > 127))
-			cmp = -1;
-		else if (((unsigned char) *s1 > 127) && ((unsigned char) *s2 <= 127))
-			cmp = 1;
-		else if (*s1 > *s2)
-			cmp = 1;
-		else
-			cmp = -1;
-		if (*s2 == '\0')
-			end2 = 1;
-	}
-	return (cmp + my_cmp(s1 + sizeof(char), s2 + sizeof(char), n - 1, end2));
-}
-
 int	ft_strcmp(char *s1, char *s2)
 {
-	int	len1;
-	int	len2;
-	int	cmp;
+	int	i;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	if (len1 >= len2)
-		cmp = my_cmp(s1, s2, len1, 0);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	{
+		i++;
+	}
+	if (s1[i] == '\0' && s2[i] == '\0')
+	{
+		return (0);
+	}
 	else
-		cmp = my_cmp(s2, s1, len2, 0);
-	if (cmp < 0)
-		return (-1);
-	else if (cmp > 0)
-		return (1);
-	return (0);
+	{
+		return (s1[i] - s2[i]);
+	}
 }
 
 // int	main(void)
@@ -78,13 +42,4 @@ int	ft_strcmp(char *s1, char *s2)
 // 	//
 // 	printf("###\ncmp og: %d\n", strcmp("ABA", "ABZ"));
 // 	printf("cmp cu: %d\n", ft_strcmp("ABA", "ABZ"));
-// 	//
-// 	printf("###\ncmp og: %d\n", strcmp("\201", ""));
-// 	printf("cmp cu: %d\n", ft_strcmp("\201", ""));
-// 	//
-// 	printf("###\ncmp og: %d\n", strcmp("\201\201", ""));
-// 	printf("cmp cu: %d\n", ft_strcmp("\201\201", ""));
-// 	//
-// 	printf("###\ncmp og: %d\n", strcmp("\201", "A\201"));
-// 	printf("cmp cu: %d\n", ft_strcmp("\201", "A\201"));
 // }
