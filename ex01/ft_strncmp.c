@@ -13,59 +13,23 @@
 // #include <stdio.h>
 // #include <string.h>
 
-int	ft_strlen(char *str)
-{
-	if (*str == '\0')
-		return (1);
-	return (ft_strlen (str + sizeof(char)) + 1);
-}
-
-int	my_cmp2(char *s1, char *s2, int n, int end2)
-{
-	int	cmp;
-
-	if (n == 0)
-		return (0);
-	if (end2)
-		cmp = 1;
-	else
-	{
-		if (*s1 == *s2)
-			cmp = 0;
-		else if (((unsigned char) *s1 > 127) && ((unsigned char) *s2 > 127))
-			cmp = 0;
-		else if (((unsigned char) *s1 <= 127) && ((unsigned char) *s2 > 127))
-			cmp = -1;
-		else if (((unsigned char) *s1 > 127) && ((unsigned char) *s2 <= 127))
-			cmp = 1;
-		else if (*s1 > *s2)
-			cmp = 1;
-		else
-			cmp = -1;
-		if (*s2 == '\0')
-			end2 = 1;
-	}
-	return (cmp + my_cmp2(s1 + sizeof(char),
-			s2 + sizeof(char), n - 1, end2));
-}
-
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	len1;
-	int	len2;
-	int	cmp;
+	unsigned int	i;
 
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	if (n < (unsigned int) len1)
-		len1 = n;
-	if (n < (unsigned int) len2)
-		len2 = n;
-	if (len1 >= len2)
-		cmp = my_cmp2(s1, s2, len1, 0);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i <= n)
+	{
+		i++;
+	}
+	if (s1[i] == '\0' && s2[i] == '\0')
+	{
+		return (0);
+	}
 	else
-		cmp = my_cmp2(s2, s1, len2, 0);
-	return (cmp);
+	{
+		return (s1[i] - s2[i]);
+	}
 }
 
 // int	main(void)
@@ -82,14 +46,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 // 	printf("###\ncmp og: %d\n", strncmp("ABA", "ABZ", 100));
 // 	printf("cmp cu: %d\n", ft_strncmp("ABA", "ABZ", 100));
 // 	//
-// 	printf("###\ncmp og: %d\n", strncmp("\201", "", 100));
-// 	printf("cmp cu: %d\n", ft_strncmp("\201", "", 100));
-// 	//
-// 	printf("###\ncmp og: %d\n", strncmp("\201\201", "", 2));
-// 	printf("cmp cu: %d\n", ft_strncmp("\201\201", "", 2));
-// 	//
-// 	printf("###\ncmp og: %d\n", strncmp("\101", "A", 1));
-// 	printf("cmp cu: %d\n", ft_strncmp("\101", "A", 1));
+// 	printf("###\ncmp og: %d\n", strncmp("ABCEEFGH", "ABCDEFGH", 5));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABCEEFGH", "ABCDEFGH", 5));
 // 	//
 // 	printf("###\ncmp og: %d\n", strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
 // 	printf("cmp cu: %d\n", ft_strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
