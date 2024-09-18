@@ -85,11 +85,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 // 	printf("###\ncmp og: %d\n", strncmp("\201", "", 100));
 // 	printf("cmp cu: %d\n", ft_strncmp("\201", "", 100));
 // 	//
-// 	printf("###\ncmp og: %d\n", strncmp("\201\201", "", 100));
-// 	printf("cmp cu: %d\n", ft_strncmp("\201\201", "", 100));
+// 	printf("###\ncmp og: %d\n", strncmp("\201\201", "", 2));
+// 	printf("cmp cu: %d\n", ft_strncmp("\201\201", "", 2));
 // 	//
-// 	printf("###\ncmp og: %d\n", strncmp("\201", "A\201", 100));
-// 	printf("cmp cu: %d\n", ft_strncmp("\201", "A\201", 100));
+// 	printf("###\ncmp og: %d\n", strncmp("\101", "A", 1));
+// 	printf("cmp cu: %d\n", ft_strncmp("\101", "A", 1));
 // 	//
 // 	printf("###\ncmp og: %d\n", strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
 // 	printf("cmp cu: %d\n", ft_strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
