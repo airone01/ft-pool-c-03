@@ -28,12 +28,12 @@ char	*ft_strcat(char *dest, char *src)
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
 	i = 0;
-	while (i < src_len)
+	while (i < (src_len - 1))
 	{
 		dest[i + dest_len - 1] = src[i];
 		i++;
 	}
-	dest[i + dest_len] = '\0';
+	dest[i + dest_len - 1] = '\0';
 	return (dest);
 }
 
