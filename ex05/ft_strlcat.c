@@ -19,7 +19,7 @@ int	ft_strlen(char *str)
 	return (ft_strlen (str + sizeof(char)) + 1);
 }
 
-char	*ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	int	dest_len;
 	int	src_len;
@@ -37,21 +37,21 @@ char	*ft_strlcat(char *dest, char *src, unsigned int size)
 		i++;
 	}
 	dest[i - 2] = '\0';
-	return (dest);
+	return (ft_strlen(dest) - 1);
 }
 
 // int	main(void)
 // {
 // 	char	*src = "world!";
 // 	char	*src2 = "world!";
-// 	char	dest[500] = "Hello, ";
+// 	char	dest[500] = "SALUT COMMENT CA VA ";
 // 	char	dest2[500] = "Hello, ";
-// 	char	*rest;
+// 	int	rest;
 //
 // 	printf ("### B4\nsrc: %s\ndest: %s\n", src, dest);
 // 	rest = ft_strlcat(dest, src, 100);
-// 	printf ("### @R\nsrc: %s\ndest: %s\nrest: %s\n", src, dest, rest);
+// 	printf ("### @R\nsrc: %s\ndest: %s\nrest: %d\n", src, dest, rest);
 // 	printf ("### B4\nsrc: %s\ndest: %s\n", src2, dest2);
 // 	rest = ft_strlcat(dest2, src2, 12);
-// 	printf ("### @R\nsrc: %s\ndest: %s\nrest: %s\n", src2, dest2, rest);
+// 	printf ("### @R\nsrc: %s\ndest: %s\nrest: %d\n", src2, dest2, rest);
 // }
