@@ -17,7 +17,7 @@
 unsigned int	ft_strlen(char *str)
 {
 	if (*str == '\0')
-		return (1);
+		return (0);
 	return (ft_strlen (str + sizeof(char)) + 1);
 }
 
@@ -63,7 +63,6 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 // 	int res32 = strlcat(dest32, src3, 100);
 //
 // 	// Assert differences
-// 	printf("'%s' : '%s'\n", dest11, dest12);
 // 	if (strcmp(dest11, dest12) != 0)
 // 		return printf("dest11-12");
 // 	if (strcmp(dest21, dest22) != 0)
