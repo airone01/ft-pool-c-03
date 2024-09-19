@@ -31,7 +31,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	src_len = ft_strlen(src);
 	i = 0;
 	if (size <= dest_len)
-		return (dest_len + size);
+		return (src_len + size);
 	while (i < (size - dest_len - 1) && src[i] != '\0')
 	{
 		dest[i + dest_len] = src[i];
