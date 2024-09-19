@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
@@ -29,23 +29,23 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (0);
 }
 
-int	main(void)
-{
-	printf("###\ncmp og: %d\n", strncmp("ABC", "ABC", 100));
-	printf("cmp cu: %d\n", ft_strncmp("ABC", "ABC", 100));
-	//
-	printf("###\ncmp og: %d\n", strncmp("ABC", "ABC", 2));
-	printf("cmp cu: %d\n", ft_strncmp("ABC", "ABC", 2));
-	//
-	printf("###\ncmp og: %d\n", strncmp("ABC", "AB", 100));
-	printf("cmp cu: %d\n", ft_strncmp("ABC", "AB", 100));
-	//
-	printf("###\ncmp og: %d\n", strncmp("ABA", "ABZ", 100));
-	printf("cmp cu: %d\n", ft_strncmp("ABA", "ABZ", 100));
-	//
-	printf("###\ncmp og: %d\n", strncmp("ABCEEFGH", "ABCDEFGH", 5));
-	printf("cmp cu: %d\n", ft_strncmp("ABCEEFGH", "ABCDEFGH", 5));
-	//
-	printf("###\ncmp og: %d\n", strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
-	printf("cmp cu: %d\n", ft_strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
-}
+// int	main(void)
+// {
+// 	printf("###\ncmp og: %d\n", strncmp("ABC", "ABC", 100));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABC", "ABC", 100));
+// 	//
+// 	printf("###\ncmp og: %d\n", strncmp("ABC", "ABC", 2));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABC", "ABC", 2));
+// 	//
+// 	printf("###\ncmp og: %d\n", strncmp("ABC", "AB", 100));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABC", "AB", 100));
+// 	//
+// 	printf("###\ncmp og: %d\n", strncmp("ABA", "ABZ", 100));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABA", "ABZ", 100));
+// 	//
+// 	printf("###\ncmp og: %d\n", strncmp("ABCEEFGH", "ABCDEFGH", 5));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABCEEFGH", "ABCDEFGH", 5));
+// 	//
+// 	printf("###\ncmp og: %d\n", strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
+// 	printf("cmp cu: %d\n", ft_strncmp("ABCDEFGHIJK", "ONMLKJIHGFE", 8));
+// }
