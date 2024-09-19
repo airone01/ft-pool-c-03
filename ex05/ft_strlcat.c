@@ -21,16 +21,16 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	dest_len;
-	int	src_len;
-	int	i;
+	int				dest_len;
+	int				src_len;
+	unsigned int	i;
 
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
 	i = 0;
-	while ((unsigned int) i < (size + 2) && i < (dest_len + src_len))
+	while (i < (size + 2) && i < (unsigned int)(dest_len + src_len))
 	{
-		if (i > dest_len)
+		if (i > (unsigned int) dest_len)
 		{
 			dest[i - 2] = src[i - dest_len - 1];
 		}
